@@ -4,7 +4,6 @@ import { useState } from 'react';
 export default function App() {
   const color = randomColor();
   const [changeColor, setChangeColor] = useState(color);
-
   return (
     <div
       style={{
@@ -37,13 +36,12 @@ export default function App() {
           justifyContent: 'center',
           alignItems: 'center',
           width: '15vh',
-          height: '8vh',
+          height: '10vh',
         }}
         onClick={() => setChangeColor(color)}
       >
         Generate
       </button>
-      <br />
     </div>
   );
 }
