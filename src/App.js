@@ -35,9 +35,8 @@ export default function App() {
           MozTransition: 'all .8s ease',
         }}
       >
-        Generated Color:
+        Generated Color: {backgroundColor}
         <br />
-        {backgroundColor}
       </div>
       <br />
       <button
