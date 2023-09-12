@@ -2,11 +2,13 @@ import randomColor from 'randomcolor';
 import { useState } from 'react';
 
 export default function App() {
-  const color = randomColor();
-  const [changeColor, setChangeColor] = useState(color);
+  const [backgroundColor, setBackgroundColor] = useState(randomColor());
   const [height, setHeight] = useState('500px');
   const [width, setWidth] = useState('500px');
-
+  const generateRandomColor = () => {
+    const newColor = randomColor();
+    setBackgroundColor(newColor);
+  };
   return (
     <div
       style={{
@@ -22,7 +24,7 @@ export default function App() {
           width: width,
           height: height,
           borderRadius: '20px',
-          backgroundColor: changeColor,
+          backgroundColor: backgroundColor,
           textAlign: 'center',
           fontSize: '5vh',
           display: 'flex',
@@ -35,7 +37,7 @@ export default function App() {
       >
         Generated Color:
         <br />
-        {changeColor}
+        {backgroundColor}
       </div>
       <br />
       <button
@@ -48,10 +50,10 @@ export default function App() {
           borderRadius: '20px',
           fontSize: '20px',
           background: 'white',
-          borderColor: changeColor,
+          borderColor: backgroundColor,
           borderWidth: '4px',
         }}
-        onClick={() => setChangeColor(color)}
+        onClick={generateRandomColor}
       >
         Generate
       </button>
@@ -63,7 +65,7 @@ export default function App() {
         placeholder="500"
         style={{
           background: 'white',
-          borderColor: changeColor,
+          borderColor: backgroundColor,
           borderWidth: '3px',
           width: '15vh',
           height: '8vh',
@@ -81,7 +83,7 @@ export default function App() {
         placeholder="500"
         style={{
           background: 'white',
-          borderColor: changeColor,
+          borderColor: backgroundColor,
           borderWidth: '3px',
           width: '15vh',
           height: '8vh',
